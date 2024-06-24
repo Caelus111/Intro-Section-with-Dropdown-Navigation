@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-clr: hsl(0, 0%, 98%);
+  --text-clr: hsl(0, 0%, 41%);
+  --secondary-clr: hsl(0, 0%, 8%);
+}
+
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  background-color: var(--main-clr);
+  overflow: hidden;
+  position: relative;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--text-clr);
+  cursor: pointer;
+  transition: 0.1s;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #000;
+}
+
+img {
+  /* this is inline block not block */
+  display: inline-block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 40px;
+}
+
+button {
+  font-family: "Epilogue", sans-serif;
+  font-size: 16px;
+  color: var(--text-clr);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+button:hover {
+  color: #000;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 1.4532rem + 3.9409vi, 5rem);
+  white-space: wrap;
+  width: 79%;
+}
+
+p {
+  font-size: 18px;
+  color: var(--text-clr);
+  font-weight: 500;
+  line-height: 1.5;
+  width: 75%;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  height: 80px;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.register {
+  border: var(--text-clr) 2px solid;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.register:hover {
+  border-radius: 15px;
+  border-color: #000;
+}
+
+/* Main content */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: min(71.5625em, 100%);
+  height: 610px;
+}
+
+/* Main img */
+.desktop {
+  width: 40%;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  gap: 60px;
+}
+
+/* Main button with black bg */
+.learn-more {
+  font-size: 17px;
+  border: #000 1px solid;
+  border-radius: 15px;
+  background-color: #000;
+  color: var(--main-clr);
+  padding: 18px 30px;
+  font-weight: bolder;
+}
+
+.learn-more:hover {
+  background-color: var(--main-clr);
+  border-radius: 5px;
+  color: #000;
+}
+
+.clients {
+  width: 70%;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Burger menu */
+.mobile-menu {
+  display: none;
+}
+
+
+.close,
+.open,
+.mobile {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* dropdown hover */
+
+.dropdown a:hover img.arrow-down {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: -15px;
+}
+
+.dropdown-content .dropdown-item:not(:first-child) {
+  margin-top: 1em;
+}
+
+.dropdown-item  a{
+  margin-left: 10px;
+}
+
+.dropdown a img.arrow-down {
+  transition: all 0.3s;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+
+/* Media Queries */
+@media (width < 900px) {
+  h1 {
+    width: 100%;
+  }
+
+  p {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+
+  .desktop-menu a {
+    display: none;
+  }
+
+  .main-header {
+    gap: 0;
+    padding: 0 20px;
+  }
+
+  .login,
+  .register {
+    display: none;
+  }
+
+  section {
+    flex-direction: column-reverse;
+    height: fit-content;
+    gap: 60px;
+  }
+
+  /* IMG */
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  /* TEXT content */
+  .text-content {
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .learn-more {
+    font-size: 15px;
+    padding: 14px 25px;
+  }
+
+  .clients {
+    width: 100%;
+    margin-top: 32px;
+    justify-content: space-around;
+  }
+
+  .mobile-menu {
+    display: none ;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    padding: 86px 25px;
+    gap: 20px;
+  }
+
+  .mobile-menu a,
+  .mobile-menu img,
+  .mobile-menu .login,
+  .mobile-menu .register {
+    display: inline-block;
+  }
+  .mobile-menu .login {
+    margin-top: 20px;
+  }
+
+  .mobile-menu .login,
+  .mobile-menu .register {
+    width: 100%;
+  }
+
+  .menu-btn {
+    z-index: 1000;
+  }
+
+  .open {
+    display: block;
+  }
+
+  .open.hide {
+    display: none;
+  }
+
+  .dropdown-content {
+  display: none;
+  position: static;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: none;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: -15px;
+}
+
+.dropdown-content .dropdown-item:not(:first-child) {
+  margin-top: 1em;
+}
+
+.dropdown-item  a{
+  margin-left: 10px;
+}
+}

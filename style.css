@@ -73,9 +73,10 @@ button:hover {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 1.4532rem + 3.9409vi, 5rem);
+  margin-top: 1em;
+  font-size: clamp(2.375rem, 1.4067rem + 3.6453vi, 4.6875rem);
   white-space: wrap;
-  width: 79%;
+  width: 73%;
 }
 
 p {
@@ -83,7 +84,7 @@ p {
   color: var(--text-clr);
   font-weight: 500;
   line-height: 1.5;
-  width: 75%;
+  width: 70%;
 }
 
 /* Header */
@@ -135,7 +136,7 @@ section {
   justify-content: center;
   align-items: start;
   height: 100%;
-  gap: 60px;
+  gap: 40px;
 }
 
 /* Main button with black bg */
@@ -157,7 +158,7 @@ section {
 
 .clients {
   width: 70%;
-  margin-top: 64px;
+  margin-top: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
